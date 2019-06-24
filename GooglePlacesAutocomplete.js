@@ -716,6 +716,7 @@ export default class GooglePlacesAutocomplete extends Component {
               editable={this.props.editable}
               returnKeyType={this.props.returnKeyType}
               keyboardAppearance={this.props.keyboardAppearance}
+              autoCorrect={this.props.autoCorrect}
               autoFocus={this.props.autoFocus}
               style={[this.props.suppressDefaultStyles ? {} : defaultStyles.textInput, this.props.styles.textInput]}
               value={this.state.text}
@@ -784,7 +785,8 @@ GooglePlacesAutocomplete.propTypes = {
   suppressDefaultStyles: PropTypes.bool,
   numberOfLines: PropTypes.number,
   onSubmitEditing: PropTypes.func,
-  editable: PropTypes.bool
+  editable: PropTypes.bool,
+  autoCorrect: PropTypes.bool,
 }
 GooglePlacesAutocomplete.defaultProps = {
   placeholder: 'Search',
@@ -792,11 +794,12 @@ GooglePlacesAutocomplete.defaultProps = {
   isRowScrollable: true,
   underlineColorAndroid: 'transparent',
   returnKeyType: 'default',
-  keyboardAppearance: 'default',
+  keyboardAppearance: 'dark',
   onPress: () => {},
   onNotFound: () => {},
   onFail: () => {},
   minLength: 0,
+  autoCorrect: false,
   fetchDetails: false,
   autoFocus: false,
   autoFillOnNotFound: false,
